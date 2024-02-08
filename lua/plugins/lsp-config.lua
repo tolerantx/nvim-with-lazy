@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver", "rubocop", "html", "stylelint_lsp" }
+        ensure_installed = { "lua_ls", "tsserver", "html", "stylelint_lsp" }
       })
     end
   },
@@ -23,9 +23,6 @@ return {
         capabilities = capabilities
       })
       lspconfig.tsserver.setup({
-        capabilities = capabilities
-      })
-      lspconfig.rubocop.setup({
         capabilities = capabilities
       })
       lspconfig.html.setup({
