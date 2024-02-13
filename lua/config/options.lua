@@ -10,9 +10,15 @@ vim.cmd("set clipboard=unnamed")
 vim.cmd("set splitbelow")
 vim.cmd("set splitright")
 vim.g.mapleader = " "
+vim.opt.termguicolors = true
 
 -- Remove trailing white spaces
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
 })
+
+-- Add borders to diagnostic float boxes
+vim.diagnostic.config {
+    float = { border = "rounded" },
+}
