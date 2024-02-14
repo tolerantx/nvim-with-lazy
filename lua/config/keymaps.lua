@@ -20,3 +20,6 @@ vim.keymap.set("n", "<leader>pd", ':let @*=fnamemodify(expand("%:h"), ":~:.")<CR
 
 -- Copy current file name
 vim.keymap.set("n", "<leader>fn", ':let @*=expand("%:t")<CR>:echo "File name copied!"<CR>')
+
+-- Reset search results using "/"
+vim.keymap.set("n", "<ESC><ESC>", ":noh<CR>")
