@@ -23,3 +23,9 @@ vim.keymap.set("n", "<leader>fn", ':let @*=expand("%:t")<CR>:echo "File name cop
 
 -- Reset search results using "/"
 vim.keymap.set("n", "<ESC><ESC>", ":noh<CR>")
+
+-- Don't copy to clipboard using C, c, S or s on normal mode
+vim.keymap.set("n", "C", "\"_C", { noremap = true })
+vim.keymap.set("n", "c", "\"_c", { noremap = true })
+vim.keymap.set("n", "S", "\"_S", { noremap = true })
+vim.keymap.set("n", "s", "\"_s", { noremap = true })
