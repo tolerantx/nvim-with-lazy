@@ -23,3 +23,13 @@ vim.diagnostic.config {
     float = { border = "rounded" },
 }
 
+
+-- Open nvim configuration
+vim.api.nvim_create_user_command('Config', function()
+    vim.cmd('edit ~/.config/nvim/')
+end, {})
+
+-- Open tmux configuration
+vim.api.nvim_create_user_command('Tmux', function()
+    vim.cmd('edit ~/.tmux/tmux.conf')
+end, {})
