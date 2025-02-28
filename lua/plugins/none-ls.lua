@@ -13,7 +13,12 @@ return {
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.prettier,
           null_ls.builtins.diagnostics.stylelint,
-          null_ls.builtins.diagnostics.rubocop,
+          null_ls.builtins.diagnostics.rubocop.with({
+            command = "bundle",
+            args = {
+              "exec", "rubocop", "--stdin", "$FILENAME", "--format", "json", "--force-exclusion",
+            },
+          }),
           null_ls.builtins.formatting.rubocop,
           null_ls.builtins.formatting.black,
           null_ls.builtins.diagnostics.pylint.with({
