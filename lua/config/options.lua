@@ -23,6 +23,17 @@ vim.diagnostic.config {
     float = { border = "rounded" },
 }
 
+-- Enable virtual text for diagnostics (rubocop, etc.)
+vim.diagnostic.config({
+  virtual_text = {
+    spacing = 2,
+    prefix = "●", -- o ">>", "■", etc.
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
 
 -- Open nvim configuration
 vim.api.nvim_create_user_command('Config', function()
