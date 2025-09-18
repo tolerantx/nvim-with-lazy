@@ -44,3 +44,10 @@ end, {})
 vim.api.nvim_create_user_command('Tmux', function()
     vim.cmd('edit ~/.tmux/tmux.conf')
 end, {})
+
+vim.filetype.add({
+  pattern = {
+    [".*%.json%.jbuilder"] = "ruby",
+    [".*%.jbuilder"] = "ruby",
+  },
+})
